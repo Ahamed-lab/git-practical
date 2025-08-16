@@ -18,26 +18,10 @@
       --card: #1f2937;
       --primary: #60a5fa;
     }
-    body { 
-      font-family: 'Poppins', sans-serif; 
-      margin:0; padding:0; 
-      background:var(--bg); color:var(--text); 
-      scroll-behavior:smooth; transition:all 0.3s ease; 
-    }
-    header { 
-      background:linear-gradient(135deg,#1f2937,#111827); 
-      color:#fff; text-align:center; padding:60px 20px; 
-      position:relative;
-    }
-    header img { 
-      width:140px; height:140px; border-radius:50%; 
-      border:4px solid var(--primary); 
-      animation: float 4s ease-in-out infinite;
-    }
-    @keyframes float { 
-      0%,100%{transform:translateY(0);} 
-      50%{transform:translateY(-10px);} 
-    }
+    body { font-family: 'Poppins', sans-serif; margin:0; padding:0; background:var(--bg); color:var(--text); scroll-behavior:smooth; transition:all 0.3s ease; }
+    header { background:linear-gradient(135deg,#1f2937,#111827); color:#fff; text-align:center; padding:60px 20px; position:relative; }
+    header img { width:140px; height:140px; border-radius:50%; border:4px solid var(--primary); animation: float 4s ease-in-out infinite; }
+    @keyframes float { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-10px);} }
     header h1 { margin:15px 0 5px; font-size:2.5rem; }
     header p { font-size:1.2rem; color:#9ca3af; min-height:30px; }
     nav { margin-top:20px; }
@@ -46,14 +30,19 @@
     .btn { display:inline-block; margin-top:15px; padding:10px 20px; background:var(--primary); color:#fff; border-radius:6px; text-decoration:none; font-weight:500; transition:transform 0.3s; }
     .btn:hover { transform:scale(1.05); }
     .theme-toggle { position:absolute; top:20px; right:20px; cursor:pointer; background:var(--primary); color:#fff; border:none; padding:8px 12px; border-radius:6px; }
-    section { padding:60px 20px; max-width:1000px; margin:auto; opacity:0; transform:translateY(40px); transition:all 0.8s ease; }
+    section { padding:60px 20px; max-width:1000px; margin:auto; opacity:0; transform:translateY(40px); transition:all 0.8s ease; background:var(--card); margin-bottom:30px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); }
     section.show { opacity:1; transform:translateY(0); }
     h2 { text-align:center; font-size:2rem; margin-bottom:20px; }
     .skills-list,.cert-list { display:flex; flex-wrap:wrap; gap:15px; justify-content:center; }
-    .skill,.cert { background:var(--card); padding:10px 18px; border-radius:8px; font-weight:500; transition:transform 0.3s, background 0.3s; }
+    .skill,.cert { background:var(--bg); padding:10px 18px; border-radius:8px; font-weight:500; transition:transform 0.3s, background 0.3s; }
     .skill:hover,.cert:hover { transform:scale(1.1); background:var(--primary); color:#fff; }
-    .project { margin-bottom:20px; padding:15px; border-left:4px solid var(--primary); background:var(--card); border-radius:6px; transition:transform 0.3s; }
+    .project { margin-bottom:20px; padding:15px; border-left:4px solid var(--primary); background:var(--bg); border-radius:6px; transition:transform 0.3s; }
     .project:hover { transform:scale(1.03); }
+    form { max-width:600px; margin:auto; display:flex; flex-direction:column; }
+    form label { margin-top:10px; font-weight:500; }
+    form input,form textarea { padding:10px; margin-top:5px; border:1px solid #ccc; border-radius:6px; }
+    form button { margin-top:20px; padding:12px; background:var(--primary); color:#fff; border:none; border-radius:6px; font-weight:600; cursor:pointer; transition:background 0.3s; }
+    form button:hover { background:#1d4ed8; }
     footer { text-align:center; padding:30px; background:#111827; color:#9ca3af; }
     a { color:var(--primary); text-decoration:none; }
     a:hover { text-decoration:underline; }
@@ -79,49 +68,113 @@
     <a href="resume.pdf" class="btn" download>📄 Download Resume</a>
   </header>
 
-  <!-- Example Section -->
+  <!-- ABOUT -->
   <section id="about">
     <h2>About Me</h2>
-    <p>I am an enthusiastic learner pursuing <strong>B.Tech in Computer Science Engineering (AI & ML)</strong> at Jain University, Bangalore...</p>
+    <p>I am an enthusiastic learner pursuing <strong>B.Tech in Computer Science and Engineering (AI & ML)</strong> at Jain University, Bangalore. Skilled in Python, Java, JavaScript, HTML, CSS, SQL, and MongoDB, with hands-on experience in Ubuntu and design tools like Figma. Passionate about creating innovative and user-friendly digital solutions.</p>
   </section>
 
-  <!-- More sections (Skills, Projects, Create Project form, Education, Certifications, Contact) will follow same structure -->
+  <!-- SKILLS -->
+  <section id="skills">
+    <h2>Technical Skills</h2>
+    <div class="skills-list">
+      <div class="skill">Python</div><div class="skill">Java</div><div class="skill">JavaScript</div>
+      <div class="skill">HTML</div><div class="skill">CSS</div><div class="skill">SQL</div>
+      <div class="skill">MongoDB</div><div class="skill">Ubuntu</div><div class="skill">Figma</div>
+    </div>
+  </section>
 
-  <footer>
-    <p>&copy; 2025 Ahamed Dheethath S | All Rights Reserved</p>
-  </footer>
+  <!-- PROJECTS -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project"><h3>AI-powered Vehicle Identification</h3><p>Designed and optimized a robotic control system, improving performance by 12%.</p></div>
+    <div class="project"><h3>Translation Software using NLP</h3><p>Built an NLP-based software that translates text efficiently across multiple languages.</p></div>
+  </section>
+
+  <!-- CREATE PROJECT -->
+  <section id="create-project">
+    <h2>Create a Project</h2>
+    <p style="text-align:center;">Submit your project details below. They will be sent to my email 📩 and also appear below.</p>
+    <form id="project-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <label>Project Title:</label><input type="text" name="title" required>
+      <label>Description:</label><textarea name="description" rows="4" required></textarea>
+      <label>Technologies Used:</label><input type="text" name="tech">
+      <button type="submit">Submit Project</button>
+    </form>
+    <p id="thank-you" style="display:none; text-align:center; color:green; font-weight:bold; margin-top:15px;">✅ Thank you! Your project has been submitted successfully.</p>
+    <div id="submitted-projects" style="margin-top:30px;">
+      <h3 style="text-align:center;">📌 Submitted Projects</h3>
+      <ul id="project-list" style="list-style:none; padding:0;"></ul>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education">
+    <h2>Education</h2>
+    <p><strong>B.Tech in Computer Science and Engineering (AI & ML)</strong></p>
+    <p>Jain University, Bangalore (Aug 2023 – Present)</p>
+    <p>CGPA: 7.32 | GPA: 8.00</p>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section id="certifications">
+    <h2>Certifications</h2>
+    <div class="cert-list">
+      <div class="cert">Introduction to DevOps — IBM</div>
+      <div class="cert">Operating Systems & Hardware — Illinois Tech</div>
+      <div class="cert">Generative AI in Education — University of Glasgow</div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:ahameddheethath567@gmail.com">ahameddheethath567@gmail.com</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/ahamed-dheethath-48007a249/" target="_blank">linkedin.com/in/ahamed-dheethath</a></p>
+    <p>GitHub: <a href="https://github.com/Ahamed-lab" target="_blank">github.com/Ahamed-lab</a></p>
+  </section>
+
+  <footer><p>&copy; 2025 Ahamed Dheethath S | All Rights Reserved</p></footer>
 
   <script>
     // Typing Effect
-    const text = ["Web Developer", "UX Enthusiast", "AI & ML Student"];
-    let i=0,j=0, current="", isDeleting=false;
-    function type() {
-      const typingElement = document.getElementById("typing");
-      current = text[i];
-      typingElement.innerHTML = current.substring(0,j);
-      if(!isDeleting && j++ === current.length){ isDeleting=true; setTimeout(type,1500); return; }
-      if(isDeleting && j-- === 0){ isDeleting=false; i=(i+1)%text.length; }
+    const text = ["Web Developer","UX Enthusiast","AI & ML Student"];
+    let i=0,j=0,isDeleting=false;
+    function type(){
+      const typing=document.getElementById("typing");
+      let current=text[i];
+      typing.innerHTML=current.substring(0,j);
+      if(!isDeleting && j++===current.length){isDeleting=true;setTimeout(type,1500);return;}
+      if(isDeleting && j--===0){isDeleting=false;i=(i+1)%text.length;}
       setTimeout(type,isDeleting?100:150);
     }
     type();
 
-    // Scroll Animations
-    const sections = document.querySelectorAll("section");
-    window.addEventListener("scroll", () => {
-      sections.forEach(sec => {
-        const rect = sec.getBoundingClientRect();
-        if(rect.top < window.innerHeight - 100) sec.classList.add("show");
-      });
-    });
+    // Scroll Animation
+    const sections=document.querySelectorAll("section");
+    window.addEventListener("scroll",()=>{sections.forEach(sec=>{const rect=sec.getBoundingClientRect();if(rect.top<window.innerHeight-100)sec.classList.add("show");});});
 
-    // Dark/Light Mode Toggle
-    function toggleTheme(){
-      if(document.body.getAttribute("data-theme")==="dark"){
-        document.body.removeAttribute("data-theme");
-      } else {
-        document.body.setAttribute("data-theme","dark");
-      }
-    }
+    // Dark/Light Mode
+    function toggleTheme(){document.body.getAttribute("data-theme")==="dark"?document.body.removeAttribute("data-theme"):document.body.setAttribute("data-theme","dark");}
+
+    // Form + Live Project
+    const form=document.getElementById("project-form");
+    const thankYou=document.getElementById("thank-you");
+    const projectList=document.getElementById("project-list");
+    form.addEventListener("submit",async function(e){
+      e.preventDefault();
+      const formData=new FormData(form);
+      const title=formData.get("title"),desc=formData.get("description"),tech=formData.get("tech");
+      const response=await fetch(form.action,{method:form.method,body:formData,headers:{'Accept':'application/json'}});
+      if(response.ok){
+        form.reset(); thankYou.style.display="block";
+        const li=document.createElement("li");
+        li.style.margin="15px 0"; li.style.padding="15px"; li.style.background="var(--bg)";
+        li.style.borderLeft="4px solid var(--primary)"; li.style.borderRadius="6px";
+        li.innerHTML=`<strong>${title}</strong><br><em>${tech}</em><p>${desc}</p>`;
+        projectList.appendChild(li);
+      }else alert("❌ Oops! Something went wrong. Try again.");
+    });
   </script>
 </body>
 </html>
