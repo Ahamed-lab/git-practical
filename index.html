@@ -6,91 +6,109 @@
   <title>Ahamed Dheethath S - Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <style>
+    /* General Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Poppins', sans-serif;
-      margin: 0; padding: 0;
-      background: #f8fafc; color: #1e293b;
+      background: #0f172a; color: #e2e8f0;
       scroll-behavior: smooth;
     }
+    a { color: #38bdf8; text-decoration: none; }
+    h1, h2, h3 { font-weight: 700; }
+
     /* Navbar */
     nav {
       position: fixed; top: 0; left: 0; right: 0;
-      background: #fff; padding: 15px 30px;
-      display: flex; justify-content: space-between; align-items: center;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1); z-index: 1000;
+      background: rgba(15,23,42,0.9);
+      display: flex; justify-content: center;
+      padding: 15px; z-index: 1000;
+      backdrop-filter: blur(8px);
     }
     nav a {
-      margin: 0 12px; text-decoration: none;
-      color: #1e293b; font-weight: 500; position: relative;
+      margin: 0 15px; color: #e2e8f0;
+      font-weight: 500; transition: color 0.3s;
     }
-    nav a::after {
-      content: ""; position: absolute; left: 0; bottom: -5px;
-      width: 0%; height: 2px; background: #0ea5e9; transition: 0.3s;
-    }
-    nav a:hover::after { width: 100%; }
+    nav a:hover { color: #38bdf8; }
+
     /* Hero */
     header {
-      height: 100vh; display: flex; flex-direction: column;
-      justify-content: center; align-items: center; text-align: center;
+      height: 100vh;
+      display: flex; flex-direction: column;
+      justify-content: center; align-items: center;
+      text-align: center; padding: 0 20px;
       background: linear-gradient(135deg, #0ea5e9, #2563eb);
-      color: white; padding: 20px;
+      color: white;
     }
-    header h1 { font-size: 3rem; margin: 10px 0; }
-    header p { font-size: 1.2rem; margin-bottom: 20px; min-height: 30px; }
+    header h1 { font-size: 3rem; margin-bottom: 15px; }
+    header p { font-size: 1.2rem; margin-bottom: 30px; }
     .btn {
-      padding: 12px 24px; border-radius: 6px;
-      border: none; cursor: pointer;
-      margin: 8px; font-weight: 500;
-      transition: transform 0.3s, background 0.3s;
+      display: inline-block; padding: 12px 24px;
+      border-radius: 6px; margin: 8px;
+      font-weight: 500; cursor: pointer;
+      transition: transform 0.3s;
     }
-    .btn-primary { background: #fff; color: #2563eb; }
-    .btn-primary:hover { background: #f1f5f9; transform: scale(1.05); }
-    .btn-secondary { background: transparent; border: 2px solid #fff; color: white; }
-    .btn-secondary:hover { background: white; color: #2563eb; transform: scale(1.05); }
+    .btn-primary { background: white; color: #2563eb; }
+    .btn-primary:hover { transform: scale(1.05); }
+    .btn-outline {
+      border: 2px solid white; color: white;
+    }
+    .btn-outline:hover {
+      background: white; color: #2563eb;
+      transform: scale(1.05);
+    }
+
     /* Sections */
     section {
-      max-width: 1000px; margin: auto; padding: 80px 20px;
-      opacity: 0; transform: translateY(40px);
+      max-width: 900px; margin: auto;
+      padding: 80px 20px; text-align: center;
+      opacity: 0; transform: translateY(50px);
       transition: all 0.8s ease;
     }
     section.show { opacity: 1; transform: translateY(0); }
-    h2 { text-align: center; font-size: 2rem; margin-bottom: 30px; color: #0f172a; }
+    h2 { font-size: 2rem; margin-bottom: 20px; }
+
     /* Skills */
-    .skills-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
+    .skills-list { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; }
     .skill {
-      background: #e0f2fe; color: #0369a1;
-      padding: 12px 20px; border-radius: 8px;
-      font-weight: 500; transition: transform 0.3s;
-    }
-    .skill:hover { transform: scale(1.1); background: #bae6fd; }
-    /* Projects */
-    .project {
-      background: #fff; padding: 20px; margin: 15px 0;
-      border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      padding: 10px 20px; border-radius: 6px;
+      background: #1e293b; color: #38bdf8;
       transition: transform 0.3s;
     }
+    .skill:hover { transform: scale(1.1); }
+
+    /* Projects */
+    .project {
+      background: #1e293b; padding: 20px;
+      margin: 20px 0; border-radius: 10px;
+      text-align: left; transition: transform 0.3s;
+    }
     .project:hover { transform: translateY(-5px); }
+
     /* Form */
-    form { max-width: 600px; margin: auto; display: flex; flex-direction: column; }
-    form label { margin-top: 10px; font-weight: 500; }
+    form { display: flex; flex-direction: column; max-width: 600px; margin: auto; }
     form input, form textarea {
-      padding: 12px; margin-top: 6px; border: 1px solid #cbd5e1;
-      border-radius: 6px; font-family: inherit;
+      margin-top: 10px; padding: 12px;
+      border-radius: 6px; border: none;
+      background: #e2e8f0; color: #0f172a;
     }
     form button {
-      margin-top: 20px; padding: 12px; border: none;
-      background: #0ea5e9; color: white; border-radius: 6px;
-      font-weight: 600; cursor: pointer; transition: background 0.3s;
+      margin-top: 20px; padding: 12px;
+      border: none; border-radius: 6px;
+      background: #38bdf8; color: #0f172a;
+      font-weight: bold; cursor: pointer;
+      transition: background 0.3s;
     }
-    form button:hover { background: #0284c7; }
+    form button:hover { background: #0ea5e9; }
     #project-list li {
-      margin: 15px 0; padding: 15px;
-      background: #f1f5f9; border-left: 4px solid #0ea5e9;
+      background: #1e293b; padding: 15px;
+      margin: 15px 0; border-left: 4px solid #38bdf8;
       border-radius: 6px;
     }
+
+    /* Footer */
     footer {
-      background: #0f172a; color: #cbd5e1;
       text-align: center; padding: 20px;
+      background: #1e293b; color: #94a3b8;
     }
   </style>
 </head>
@@ -98,37 +116,32 @@
 
   <!-- NAV -->
   <nav>
-    <div><strong>Ahamed Dheethath</strong></div>
-    <div>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#create-project">Create Project</a>
-      <a href="#education">Education</a>
-      <a href="#certifications">Certifications</a>
-      <a href="#contact">Contact</a>
-    </div>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#create-project">Create Project</a>
+    <a href="#education">Education</a>
+    <a href="#certifications">Certifications</a>
+    <a href="#contact">Contact</a>
   </nav>
 
   <!-- HERO -->
   <header>
     <h1>Ahamed Dheethath S</h1>
     <p id="typing"></p>
-    <div>
-      <a href="resume.pdf" download><button class="btn btn-primary">📄 Download Resume</button></a>
-      <a href="#projects"><button class="btn btn-secondary">See My Work ↓</button></a>
-    </div>
+    <a href="resume.pdf" class="btn btn-primary" download>📄 Resume</a>
+    <a href="#projects" class="btn btn-outline">See Projects ↓</a>
   </header>
 
   <!-- ABOUT -->
   <section id="about">
     <h2>About Me</h2>
-    <p>I am an enthusiastic learner pursuing <strong>B.Tech in Computer Science and Engineering (AI & ML)</strong> at Jain University, Bangalore. Skilled in Python, Java, JavaScript, HTML, CSS, SQL, and MongoDB, with experience in Ubuntu and Figma. Passionate about creating user-friendly digital solutions that combine technology and design.</p>
+    <p>I am pursuing <strong>B.Tech in Computer Science (AI & ML)</strong> at Jain University. Skilled in Python, Java, JavaScript, HTML, CSS, SQL, and MongoDB, with design knowledge in Figma. Passionate about blending creativity and technology to build user-friendly solutions.</p>
   </section>
 
   <!-- SKILLS -->
   <section id="skills">
-    <h2>Technical Skills</h2>
+    <h2>Skills</h2>
     <div class="skills-list">
       <div class="skill">Python</div><div class="skill">Java</div><div class="skill">JavaScript</div>
       <div class="skill">HTML</div><div class="skill">CSS</div><div class="skill">SQL</div>
@@ -146,31 +159,26 @@
   <!-- CREATE PROJECT -->
   <section id="create-project">
     <h2>Create a Project</h2>
-    <p style="text-align:center;">Submit your project details below. They’ll be sent to my email 📩 and appear here.</p>
     <form id="project-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-      <label>Project Title:</label><input type="text" name="title" required>
-      <label>Description:</label><textarea name="description" rows="4" required></textarea>
-      <label>Technologies Used:</label><input type="text" name="tech">
+      <input type="text" name="title" placeholder="Project Title" required>
+      <textarea name="description" rows="4" placeholder="Description" required></textarea>
+      <input type="text" name="tech" placeholder="Technologies Used">
       <button type="submit">Submit Project</button>
     </form>
-    <p id="thank-you" style="display:none;text-align:center;color:green;font-weight:bold;margin-top:15px;">✅ Thank you! Project submitted.</p>
+    <p id="thank-you" style="display:none;color:lightgreen;margin-top:10px;">✅ Thank you! Project submitted.</p>
     <ul id="project-list"></ul>
   </section>
 
   <!-- EDUCATION -->
   <section id="education">
     <h2>Education</h2>
-    <p><strong>B.Tech in Computer Science and Engineering (AI & ML)</strong><br>Jain University, Bangalore (2023–Present)<br>CGPA: 7.32 | GPA: 8.00</p>
+    <p><strong>B.Tech in Computer Science and Engineering (AI & ML)</strong><br>Jain University, Bangalore (2023–Present)<br>CGPA: 7.32</p>
   </section>
 
   <!-- CERTIFICATIONS -->
   <section id="certifications">
     <h2>Certifications</h2>
-    <ul class="skills-list">
-      <li class="cert">DevOps — IBM</li>
-      <li class="cert">Operating Systems — Illinois Tech</li>
-      <li class="cert">Generative AI — University of Glasgow</li>
-    </ul>
+    <p>DevOps — IBM | Operating Systems — Illinois Tech | Generative AI — Glasgow</p>
   </section>
 
   <!-- CONTACT -->
@@ -181,26 +189,29 @@
     <p>GitHub: <a href="https://github.com/Ahamed-lab" target="_blank">github.com/Ahamed-lab</a></p>
   </section>
 
-  <footer>
-    <p>&copy; 2025 Ahamed Dheethath S | Built with ❤️</p>
-  </footer>
+  <footer><p>&copy; 2025 Ahamed Dheethath S</p></footer>
 
   <script>
-    // Typing effect
+    // Typing Effect
     const roles = ["Web Developer", "UX Enthusiast", "AI & ML Student"];
     let i=0,j=0,isDeleting=false;
     function type(){
       const typing=document.getElementById("typing");
       const current=roles[i];
       typing.textContent=current.substring(0,j);
-      if(!isDeleting && j++===current.length){isDeleting=true;setTimeout(type,1200);return;}
+      if(!isDeleting && j++===current.length){isDeleting=true;setTimeout(type,1000);return;}
       if(isDeleting && j--===0){isDeleting=false;i=(i+1)%roles.length;}
       setTimeout(type,isDeleting?80:120);
     } type();
 
-    // Scroll animations
+    // Scroll animation
     const sections=document.querySelectorAll("section");
-    window.addEventListener("scroll",()=>{sections.forEach(sec=>{const rect=sec.getBoundingClientRect();if(rect.top<window.innerHeight-100)sec.classList.add("show");});});
+    window.addEventListener("scroll",()=>{
+      sections.forEach(sec=>{
+        const rect=sec.getBoundingClientRect();
+        if(rect.top<window.innerHeight-100) sec.classList.add("show");
+      });
+    });
 
     // Create project form
     const form=document.getElementById("project-form");
@@ -216,7 +227,7 @@
         const li=document.createElement("li");
         li.innerHTML=`<strong>${title}</strong><br><em>${tech}</em><p>${desc}</p>`;
         projectList.appendChild(li);
-      } else alert("❌ Something went wrong.");
+      }
     });
   </script>
 </body>
