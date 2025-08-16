@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ahamed Dheethath S - Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0; padding: 0;
+      background: #f9fafb; color: #333;
+      scroll-behavior: smooth;
+    }
+    header {
+      background: linear-gradient(135deg, #1f2937, #111827);
+      color: #fff; text-align: center;
+      padding: 60px 20px;
+    }
+    header img {
+      width: 140px; height: 140px;
+      border-radius: 50%; border: 4px solid #2563eb;
+    }
+    header h1 {
+      margin: 15px 0 5px;
+      font-size: 2.5rem;
+    }
+    header p {
+      font-size: 1.2rem; color: #9ca3af;
+    }
+    nav {
+      margin-top: 20px;
+    }
+    nav a {
+      color: #fff; margin: 0 15px;
+      text-decoration: none; font-weight: 500;
+      transition: color 0.3s;
+    }
+    nav a:hover { color: #60a5fa; }
+    .btn {
+      display: inline-block; margin-top: 15px;
+      padding: 10px 20px;
+      background: #2563eb; color: #fff;
+      border-radius: 6px; text-decoration: none;
+      font-weight: 500; transition: background 0.3s;
+    }
+    .btn:hover { background: #1d4ed8; }
+    section {
+      padding: 60px 20px; max-width: 1000px; margin: auto;
+    }
+    h2 {
+      text-align: center; font-size: 2rem;
+      margin-bottom: 20px; color: #111827;
+    }
+    .about, .skills, .projects, .education, .certifications, .contact {
+      background: #fff; padding: 25px;
+      border-radius: 12px; margin-bottom: 30px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    .skills-list, .cert-list {
+      display: flex; flex-wrap: wrap;
+      gap: 15px; justify-content: center;
+    }
+    .skill, .cert {
+      background: #f3f4f6; padding: 10px 18px;
+      border-radius: 8px; font-weight: 500;
+      transition: transform 0.2s;
+    }
+    .skill:hover, .cert:hover { transform: scale(1.05); }
+    .project {
+      margin-bottom: 20px;
+      padding: 15px; border-left: 4px solid #2563eb;
+      background: #f9fafb; border-radius: 6px;
+    }
+    footer {
+      text-align: center; padding: 30px;
+      background: #111827; color: #9ca3af;
+    }
+    a { color: #2563eb; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <img src="profile.jpg" alt="Ahamed Dheethath S">
+    <h1>Ahamed Dheethath S</h1>
+    <p>Computer Science Engineering (AI & ML) Student | Developer | UX Enthusiast</p>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Education</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a href="resume.pdf" class="btn" download>📄 Download Resume</a>
+  </header>
+
+  <!-- ABOUT -->
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <p>
+      I am an enthusiastic learner and motivated student pursuing a 
+      <strong>B.Tech in Computer Science and Engineering (AI & ML specialization) at Jain University, Bangalore</strong>, 
+      with a strong foundation in both <strong>software development</strong> and <strong>user experience design</strong>.
+    </p>
+    <p>
+      Skilled in <strong>Python, Java, JavaScript, HTML, CSS, and SQL</strong>, I also have hands-on experience with 
+      <strong>MongoDB databases</strong>, <strong>Ubuntu environments</strong>, and design tools like <strong>Figma</strong>. 
+      I have worked on impactful projects such as an <strong>AI-powered Vehicle Identification system</strong> 
+      and a <strong>Translation Software using NLP</strong>. 
+    </p>
+    <p>
+      My goal is to combine technical expertise with creativity to design and develop digital solutions that are 
+      <strong>innovative, user-friendly, and impactful</strong>.
+    </p>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="skills">
+    <h2>Technical Skills</h2>
+    <div class="skills-list">
+      <div class="skill">Python</div>
+      <div class="skill">Java</div>
+      <div class="skill">JavaScript</div>
+      <div class="skill">HTML</div>
+      <div class="skill">CSS</div>
+      <div class="skill">SQL</div>
+      <div class="skill">MongoDB</div>
+      <div class="skill">Ubuntu</div>
+      <div class="skill">Figma</div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="projects">
+    <h2>Projects</h2>
+    <div class="project">
+      <h3>AI-powered Vehicle Identification</h3>
+      <p>Designed and optimized a robotic control system, improving performance by 12%. 
+         Coordinated testing and validation to ensure compliance with standards, and contributed to a 
+         15% reduction in system failures.</p>
+    </div>
+    <div class="project">
+      <h3>Translation Software using NLP</h3>
+      <p>Built an NLP-based software that translates text efficiently across multiple languages, 
+         demonstrating strong problem-solving and AI integration skills.</p>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education" class="education">
+    <h2>Education</h2>
+    <p><strong>B.Tech in Computer Science and Engineering (AI & ML)</strong></p>
+    <p>Jain University, Bangalore (Aug 2023 – Present)</p>
+    <p>CGPA: 7.32 | GPA: 8.00</p>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section id="certifications" class="certifications">
+    <h2>Certifications</h2>
+    <div class="cert-list">
+      <div class="cert">Introduction to DevOps — IBM</div>
+      <div class="cert">Contemporary Operating Systems & Hardware — Illinois Tech</div>
+      <div class="cert">Generative AI in Education — University of Glasgow</div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:ahameddheethath567@gmail.com">ahameddheethath567@gmail.com</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/ahamed-dheethath-48007a249/" target="_blank">linkedin.com/in/ahamed-dheethath</a></p>
+    <p>GitHub: <a href="https://github.com/Ahamed-lab" target="_blank">github.com/Ahamed-lab</a></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Ahamed Dheethath S | All Rights Reserved</p>
+  </footer>
+
+</body>
+</html>
