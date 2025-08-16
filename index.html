@@ -1,72 +1,137 @@
-// App.jsx
-import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ahamed Dheethath S - Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Poppins', sans-serif; margin:0; padding:0; background:#f9fafb; color:#333; scroll-behavior:smooth; }
+    header { background:linear-gradient(135deg,#1f2937,#111827); color:#fff; text-align:center; padding:60px 20px; }
+    header img { width:140px; height:140px; border-radius:50%; border:4px solid #2563eb; }
+    header h1 { margin:15px 0 5px; font-size:2.5rem; }
+    header p { font-size:1.2rem; color:#9ca3af; }
+    nav { margin-top:20px; }
+    nav a { color:#fff; margin:0 15px; text-decoration:none; font-weight:500; transition:color 0.3s; }
+    nav a:hover { color:#60a5fa; }
+    .btn { display:inline-block; margin-top:15px; padding:10px 20px; background:#2563eb; color:#fff; border-radius:6px; text-decoration:none; font-weight:500; transition:background 0.3s; }
+    .btn:hover { background:#1d4ed8; }
+    section { padding:60px 20px; max-width:1000px; margin:auto; }
+    h2 { text-align:center; font-size:2rem; margin-bottom:20px; color:#111827; }
+    .about,.skills,.projects,.create-project,.education,.certifications,.contact { background:#fff; padding:25px; border-radius:12px; margin-bottom:30px; box-shadow:0 4px 12px rgba(0,0,0,0.05); }
+    .skills-list,.cert-list { display:flex; flex-wrap:wrap; gap:15px; justify-content:center; }
+    .skill,.cert { background:#f3f4f6; padding:10px 18px; border-radius:8px; font-weight:500; transition:transform 0.2s; }
+    .skill:hover,.cert:hover { transform:scale(1.05); }
+    .project { margin-bottom:20px; padding:15px; border-left:4px solid #2563eb; background:#f9fafb; border-radius:6px; }
+    form { max-width:600px; margin:auto; display:flex; flex-direction:column; }
+    form label { margin-top:10px; font-weight:500; }
+    form input,form textarea { padding:10px; margin-top:5px; border:1px solid #ccc; border-radius:6px; }
+    form button { margin-top:20px; padding:12px; background:#2563eb; color:#fff; border:none; border-radius:6px; font-weight:600; cursor:pointer; transition:background 0.3s; }
+    form button:hover { background:#1d4ed8; }
+    footer { text-align:center; padding:30px; background:#111827; color:#9ca3af; }
+    a { color:#2563eb; text-decoration:none; }
+    a:hover { text-decoration:underline; }
+  </style>
+</head>
+<body>
 
-export default function Portfolio() {
-  return (
-    <div className="bg-gray-50 min-h-screen text-gray-900">
-      {/* Hero Section */}
-      <section className="flex flex-col items-center justify-center h-screen text-center bg-gradient-to-r from-blue-600 to-indigo-800 text-white">
-        <motion.h1 
-          initial={{ opacity: 0, y: -50 }} 
-          animate={{ opacity: 1, y: 0 }} 
-          transition={{ duration: 1 }}
-          className="text-4xl md:text-6xl font-bold"
-        >
-          Hi, I'm Ahamed Dheethath S
-        </motion.h1>
-        <p className="mt-4 text-lg md:text-2xl">Developer | UX Enthusiast | AI & ML Student</p>
-        <a href="/resume.pdf" download>
-          <Button className="mt-6 bg-blue-500 hover:bg-blue-700 text-white rounded-full px-6 py-3">
-            📄 Download Resume
-          </Button>
-        </a>
-      </section>
+  <!-- HEADER -->
+  <header>
+    <img src="profile.jpg" alt="Ahamed Dheethath S">
+    <h1>Ahamed Dheethath S</h1>
+    <p>Computer Science Engineering (AI & ML) Student | Developer | UX Enthusiast</p>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#create-project">Create Project</a>
+      <a href="#education">Education</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a href="resume.pdf" class="btn" download>📄 Download Resume</a>
+  </header>
 
-      {/* About */}
-      <section id="about" className="py-20 max-w-4xl mx-auto px-6">
-        <h2 className="text-3xl font-bold mb-6 text-center">About Me</h2>
-        <p className="text-lg leading-relaxed text-gray-700 text-center">
-          I am an enthusiastic learner pursuing B.Tech in Computer Science Engineering (AI & ML) at Jain University, Bangalore. 
-          Skilled in Python, Java, JavaScript, HTML, CSS, SQL, and MongoDB. Passionate about building user-friendly digital solutions 
-          and exploring UX design with Figma.
-        </p>
-      </section>
+  <!-- ABOUT -->
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <p>
+      I am an enthusiastic learner and motivated student pursuing a 
+      <strong>B.Tech in Computer Science and Engineering (AI & ML specialization) at Jain University, Bangalore</strong>, 
+      with a strong foundation in both <strong>software development</strong> and <strong>user experience design</strong>.
+    </p>
+  </section>
 
-      {/* Skills */}
-      <section id="skills" className="py-20 bg-gray-100">
-        <h2 className="text-3xl font-bold text-center mb-8">Technical Skills</h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
-          {["Python", "Java", "JavaScript", "HTML", "CSS", "SQL", "MongoDB", "Figma", "Ubuntu"].map(skill => (
-            <motion.div whileHover={{ scale: 1.1 }} className="bg-white p-4 rounded-xl shadow-md text-center font-medium">
-              {skill}
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
-      {/* Projects */}
-      <section id="projects" className="py-20 max-w-5xl mx-auto px-6">
-        <h2 className="text-3xl font-bold text-center mb-8">Projects</h2>
-        <div className="grid md:grid-cols-2 gap-6">
-          <motion.div whileHover={{ scale: 1.05 }} className="bg-white p-6 rounded-xl shadow-lg">
-            <h3 className="text-xl font-semibold mb-2">AI-powered Vehicle Identification</h3>
-            <p className="text-gray-700">Designed and optimized a robotic control system, improving performance by 12%.</p>
-          </motion.div>
-          <motion.div whileHover={{ scale: 1.05 }} className="bg-white p-6 rounded-xl shadow-lg">
-            <h3 className="text-xl font-semibold mb-2">Translation Software (NLP)</h3>
-            <p className="text-gray-700">Built a natural language processing-based translation software supporting multiple languages.</p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Contact */}
-      <section id="contact" className="py-20 bg-gray-800 text-white text-center">
-        <h2 className="text-3xl font-bold mb-6">Get in Touch</h2>
-        <p>Email: <a href="mailto:ahameddheethath567@gmail.com" className="text-blue-400">ahameddheethath567@gmail.com</a></p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/ahamed-dheethath-48007a249/" className="text-blue-400">linkedin.com/in/ahamed-dheethath</a></p>
-        <p>GitHub: <a href="https://github.com/Ahamed-lab" className="text-blue-400">github.com/Ahamed-lab</a></p>
-      </section>
+  <!-- SKILLS -->
+  <section id="skills" class="skills">
+    <h2>Technical Skills</h2>
+    <div class="skills-list">
+      <div class="skill">Python</div><div class="skill">Java</div><div class="skill">JavaScript</div>
+      <div class="skill">HTML</div><div class="skill">CSS</div><div class="skill">SQL</div>
+      <div class="skill">MongoDB</div><div class="skill">Ubuntu</div><div class="skill">Figma</div>
     </div>
-  );
-}
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="projects">
+    <h2>Projects</h2>
+    <div class="project">
+      <h3>AI-powered Vehicle Identification</h3>
+      <p>Designed and optimized a robotic control system, improving performance by 12%.</p>
+    </div>
+    <div class="project">
+      <h3>Translation Software using NLP</h3>
+      <p>Built an NLP-based software that translates text across multiple languages.</p>
+    </div>
+  </section>
+
+  <!-- CREATE PROJECT FORM -->
+  <section id="create-project" class="create-project">
+    <h2>Create a Project</h2>
+    <p style="text-align:center;">Submit your project details below. They will be sent directly to my email 📩</p>
+    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <label>Project Title:</label>
+      <input type="text" name="title" required>
+      
+      <label>Description:</label>
+      <textarea name="description" rows="4" required></textarea>
+      
+      <label>Technologies Used:</label>
+      <input type="text" name="tech">
+      
+      <button type="submit">Submit Project</button>
+    </form>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education" class="education">
+    <h2>Education</h2>
+    <p><strong>B.Tech in Computer Science and Engineering (AI & ML)</strong></p>
+    <p>Jain University, Bangalore (Aug 2023 – Present)</p>
+    <p>CGPA: 7.32 | GPA: 8.00</p>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section id="certifications" class="certifications">
+    <h2>Certifications</h2>
+    <div class="cert-list">
+      <div class="cert">Introduction to DevOps — IBM</div>
+      <div class="cert">Operating Systems & Hardware — Illinois Tech</div>
+      <div class="cert">Generative AI in Education — University of Glasgow</div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:ahameddheethath567@gmail.com">ahameddheethath567@gmail.com</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/ahamed-dheethath-48007a249/" target="_blank">linkedin.com/in/ahamed-dheethath</a></p>
+    <p>GitHub: <a href="https://github.com/Ahamed-lab" target="_blank">github.com/Ahamed-lab</a></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Ahamed Dheethath S | All Rights Reserved</p>
+  </footer>
+
+</body>
+</html>
