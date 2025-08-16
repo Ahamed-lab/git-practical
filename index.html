@@ -6,57 +6,100 @@
   <title>Ahamed Dheethath S - Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg: #f9fafb;
-      --text: #333;
-      --card: #fff;
-      --primary: #2563eb;
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0; padding: 0;
+      background: #f8fafc; color: #1e293b;
+      scroll-behavior: smooth;
     }
-    [data-theme="dark"] {
-      --bg: #111827;
-      --text: #f9fafb;
-      --card: #1f2937;
-      --primary: #60a5fa;
+    /* Navbar */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      background: #fff; padding: 15px 30px;
+      display: flex; justify-content: space-between; align-items: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1); z-index: 1000;
     }
-    body { font-family: 'Poppins', sans-serif; margin:0; padding:0; background:var(--bg); color:var(--text); scroll-behavior:smooth; transition:all 0.3s ease; }
-    header { background:linear-gradient(135deg,#1f2937,#111827); color:#fff; text-align:center; padding:60px 20px; position:relative; }
-    header img { width:140px; height:140px; border-radius:50%; border:4px solid var(--primary); animation: float 4s ease-in-out infinite; }
-    @keyframes float { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-10px);} }
-    header h1 { margin:15px 0 5px; font-size:2.5rem; }
-    header p { font-size:1.2rem; color:#9ca3af; min-height:30px; }
-    nav { margin-top:20px; }
-    nav a { color:#fff; margin:0 15px; text-decoration:none; font-weight:500; transition:color 0.3s; }
-    nav a:hover { color:var(--primary); }
-    .btn { display:inline-block; margin-top:15px; padding:10px 20px; background:var(--primary); color:#fff; border-radius:6px; text-decoration:none; font-weight:500; transition:transform 0.3s; }
-    .btn:hover { transform:scale(1.05); }
-    .theme-toggle { position:absolute; top:20px; right:20px; cursor:pointer; background:var(--primary); color:#fff; border:none; padding:8px 12px; border-radius:6px; }
-    section { padding:60px 20px; max-width:1000px; margin:auto; opacity:0; transform:translateY(40px); transition:all 0.8s ease; background:var(--card); margin-bottom:30px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.05); }
-    section.show { opacity:1; transform:translateY(0); }
-    h2 { text-align:center; font-size:2rem; margin-bottom:20px; }
-    .skills-list,.cert-list { display:flex; flex-wrap:wrap; gap:15px; justify-content:center; }
-    .skill,.cert { background:var(--bg); padding:10px 18px; border-radius:8px; font-weight:500; transition:transform 0.3s, background 0.3s; }
-    .skill:hover,.cert:hover { transform:scale(1.1); background:var(--primary); color:#fff; }
-    .project { margin-bottom:20px; padding:15px; border-left:4px solid var(--primary); background:var(--bg); border-radius:6px; transition:transform 0.3s; }
-    .project:hover { transform:scale(1.03); }
-    form { max-width:600px; margin:auto; display:flex; flex-direction:column; }
-    form label { margin-top:10px; font-weight:500; }
-    form input,form textarea { padding:10px; margin-top:5px; border:1px solid #ccc; border-radius:6px; }
-    form button { margin-top:20px; padding:12px; background:var(--primary); color:#fff; border:none; border-radius:6px; font-weight:600; cursor:pointer; transition:background 0.3s; }
-    form button:hover { background:#1d4ed8; }
-    footer { text-align:center; padding:30px; background:#111827; color:#9ca3af; }
-    a { color:var(--primary); text-decoration:none; }
-    a:hover { text-decoration:underline; }
+    nav a {
+      margin: 0 12px; text-decoration: none;
+      color: #1e293b; font-weight: 500; position: relative;
+    }
+    nav a::after {
+      content: ""; position: absolute; left: 0; bottom: -5px;
+      width: 0%; height: 2px; background: #0ea5e9; transition: 0.3s;
+    }
+    nav a:hover::after { width: 100%; }
+    /* Hero */
+    header {
+      height: 100vh; display: flex; flex-direction: column;
+      justify-content: center; align-items: center; text-align: center;
+      background: linear-gradient(135deg, #0ea5e9, #2563eb);
+      color: white; padding: 20px;
+    }
+    header h1 { font-size: 3rem; margin: 10px 0; }
+    header p { font-size: 1.2rem; margin-bottom: 20px; min-height: 30px; }
+    .btn {
+      padding: 12px 24px; border-radius: 6px;
+      border: none; cursor: pointer;
+      margin: 8px; font-weight: 500;
+      transition: transform 0.3s, background 0.3s;
+    }
+    .btn-primary { background: #fff; color: #2563eb; }
+    .btn-primary:hover { background: #f1f5f9; transform: scale(1.05); }
+    .btn-secondary { background: transparent; border: 2px solid #fff; color: white; }
+    .btn-secondary:hover { background: white; color: #2563eb; transform: scale(1.05); }
+    /* Sections */
+    section {
+      max-width: 1000px; margin: auto; padding: 80px 20px;
+      opacity: 0; transform: translateY(40px);
+      transition: all 0.8s ease;
+    }
+    section.show { opacity: 1; transform: translateY(0); }
+    h2 { text-align: center; font-size: 2rem; margin-bottom: 30px; color: #0f172a; }
+    /* Skills */
+    .skills-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
+    .skill {
+      background: #e0f2fe; color: #0369a1;
+      padding: 12px 20px; border-radius: 8px;
+      font-weight: 500; transition: transform 0.3s;
+    }
+    .skill:hover { transform: scale(1.1); background: #bae6fd; }
+    /* Projects */
+    .project {
+      background: #fff; padding: 20px; margin: 15px 0;
+      border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      transition: transform 0.3s;
+    }
+    .project:hover { transform: translateY(-5px); }
+    /* Form */
+    form { max-width: 600px; margin: auto; display: flex; flex-direction: column; }
+    form label { margin-top: 10px; font-weight: 500; }
+    form input, form textarea {
+      padding: 12px; margin-top: 6px; border: 1px solid #cbd5e1;
+      border-radius: 6px; font-family: inherit;
+    }
+    form button {
+      margin-top: 20px; padding: 12px; border: none;
+      background: #0ea5e9; color: white; border-radius: 6px;
+      font-weight: 600; cursor: pointer; transition: background 0.3s;
+    }
+    form button:hover { background: #0284c7; }
+    #project-list li {
+      margin: 15px 0; padding: 15px;
+      background: #f1f5f9; border-left: 4px solid #0ea5e9;
+      border-radius: 6px;
+    }
+    footer {
+      background: #0f172a; color: #cbd5e1;
+      text-align: center; padding: 20px;
+    }
   </style>
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
-    <img src="profile.jpg" alt="Ahamed Dheethath S">
-    <h1>Ahamed Dheethath S</h1>
-    <p id="typing"></p>
-    <nav>
+  <!-- NAV -->
+  <nav>
+    <div><strong>Ahamed Dheethath</strong></div>
+    <div>
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
@@ -64,14 +107,23 @@
       <a href="#education">Education</a>
       <a href="#certifications">Certifications</a>
       <a href="#contact">Contact</a>
-    </nav>
-    <a href="resume.pdf" class="btn" download>📄 Download Resume</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header>
+    <h1>Ahamed Dheethath S</h1>
+    <p id="typing"></p>
+    <div>
+      <a href="resume.pdf" download><button class="btn btn-primary">📄 Download Resume</button></a>
+      <a href="#projects"><button class="btn btn-secondary">See My Work ↓</button></a>
+    </div>
   </header>
 
   <!-- ABOUT -->
   <section id="about">
     <h2>About Me</h2>
-    <p>I am an enthusiastic learner pursuing <strong>B.Tech in Computer Science and Engineering (AI & ML)</strong> at Jain University, Bangalore. Skilled in Python, Java, JavaScript, HTML, CSS, SQL, and MongoDB, with hands-on experience in Ubuntu and design tools like Figma. Passionate about creating innovative and user-friendly digital solutions.</p>
+    <p>I am an enthusiastic learner pursuing <strong>B.Tech in Computer Science and Engineering (AI & ML)</strong> at Jain University, Bangalore. Skilled in Python, Java, JavaScript, HTML, CSS, SQL, and MongoDB, with experience in Ubuntu and Figma. Passionate about creating user-friendly digital solutions that combine technology and design.</p>
   </section>
 
   <!-- SKILLS -->
@@ -87,43 +139,38 @@
   <!-- PROJECTS -->
   <section id="projects">
     <h2>Projects</h2>
-    <div class="project"><h3>AI-powered Vehicle Identification</h3><p>Designed and optimized a robotic control system, improving performance by 12%.</p></div>
-    <div class="project"><h3>Translation Software using NLP</h3><p>Built an NLP-based software that translates text efficiently across multiple languages.</p></div>
+    <div class="project"><h3>AI-powered Vehicle Identification</h3><p>Optimized robotic control system improving performance by 12%.</p></div>
+    <div class="project"><h3>Translation Software using NLP</h3><p>Built a multilingual text translation software using NLP techniques.</p></div>
   </section>
 
   <!-- CREATE PROJECT -->
   <section id="create-project">
     <h2>Create a Project</h2>
-    <p style="text-align:center;">Submit your project details below. They will be sent to my email 📩 and also appear below.</p>
+    <p style="text-align:center;">Submit your project details below. They’ll be sent to my email 📩 and appear here.</p>
     <form id="project-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
       <label>Project Title:</label><input type="text" name="title" required>
       <label>Description:</label><textarea name="description" rows="4" required></textarea>
       <label>Technologies Used:</label><input type="text" name="tech">
       <button type="submit">Submit Project</button>
     </form>
-    <p id="thank-you" style="display:none; text-align:center; color:green; font-weight:bold; margin-top:15px;">✅ Thank you! Your project has been submitted successfully.</p>
-    <div id="submitted-projects" style="margin-top:30px;">
-      <h3 style="text-align:center;">📌 Submitted Projects</h3>
-      <ul id="project-list" style="list-style:none; padding:0;"></ul>
-    </div>
+    <p id="thank-you" style="display:none;text-align:center;color:green;font-weight:bold;margin-top:15px;">✅ Thank you! Project submitted.</p>
+    <ul id="project-list"></ul>
   </section>
 
   <!-- EDUCATION -->
   <section id="education">
     <h2>Education</h2>
-    <p><strong>B.Tech in Computer Science and Engineering (AI & ML)</strong></p>
-    <p>Jain University, Bangalore (Aug 2023 – Present)</p>
-    <p>CGPA: 7.32 | GPA: 8.00</p>
+    <p><strong>B.Tech in Computer Science and Engineering (AI & ML)</strong><br>Jain University, Bangalore (2023–Present)<br>CGPA: 7.32 | GPA: 8.00</p>
   </section>
 
   <!-- CERTIFICATIONS -->
   <section id="certifications">
     <h2>Certifications</h2>
-    <div class="cert-list">
-      <div class="cert">Introduction to DevOps — IBM</div>
-      <div class="cert">Operating Systems & Hardware — Illinois Tech</div>
-      <div class="cert">Generative AI in Education — University of Glasgow</div>
-    </div>
+    <ul class="skills-list">
+      <li class="cert">DevOps — IBM</li>
+      <li class="cert">Operating Systems — Illinois Tech</li>
+      <li class="cert">Generative AI — University of Glasgow</li>
+    </ul>
   </section>
 
   <!-- CONTACT -->
@@ -134,30 +181,28 @@
     <p>GitHub: <a href="https://github.com/Ahamed-lab" target="_blank">github.com/Ahamed-lab</a></p>
   </section>
 
-  <footer><p>&copy; 2025 Ahamed Dheethath S | All Rights Reserved</p></footer>
+  <footer>
+    <p>&copy; 2025 Ahamed Dheethath S | Built with ❤️</p>
+  </footer>
 
   <script>
-    // Typing Effect
-    const text = ["Web Developer","UX Enthusiast","AI & ML Student"];
+    // Typing effect
+    const roles = ["Web Developer", "UX Enthusiast", "AI & ML Student"];
     let i=0,j=0,isDeleting=false;
     function type(){
       const typing=document.getElementById("typing");
-      let current=text[i];
-      typing.innerHTML=current.substring(0,j);
-      if(!isDeleting && j++===current.length){isDeleting=true;setTimeout(type,1500);return;}
-      if(isDeleting && j--===0){isDeleting=false;i=(i+1)%text.length;}
-      setTimeout(type,isDeleting?100:150);
-    }
-    type();
+      const current=roles[i];
+      typing.textContent=current.substring(0,j);
+      if(!isDeleting && j++===current.length){isDeleting=true;setTimeout(type,1200);return;}
+      if(isDeleting && j--===0){isDeleting=false;i=(i+1)%roles.length;}
+      setTimeout(type,isDeleting?80:120);
+    } type();
 
-    // Scroll Animation
+    // Scroll animations
     const sections=document.querySelectorAll("section");
     window.addEventListener("scroll",()=>{sections.forEach(sec=>{const rect=sec.getBoundingClientRect();if(rect.top<window.innerHeight-100)sec.classList.add("show");});});
 
-    // Dark/Light Mode
-    function toggleTheme(){document.body.getAttribute("data-theme")==="dark"?document.body.removeAttribute("data-theme"):document.body.setAttribute("data-theme","dark");}
-
-    // Form + Live Project
+    // Create project form
     const form=document.getElementById("project-form");
     const thankYou=document.getElementById("thank-you");
     const projectList=document.getElementById("project-list");
@@ -169,11 +214,9 @@
       if(response.ok){
         form.reset(); thankYou.style.display="block";
         const li=document.createElement("li");
-        li.style.margin="15px 0"; li.style.padding="15px"; li.style.background="var(--bg)";
-        li.style.borderLeft="4px solid var(--primary)"; li.style.borderRadius="6px";
         li.innerHTML=`<strong>${title}</strong><br><em>${tech}</em><p>${desc}</p>`;
         projectList.appendChild(li);
-      }else alert("❌ Oops! Something went wrong. Try again.");
+      } else alert("❌ Something went wrong.");
     });
   </script>
 </body>
