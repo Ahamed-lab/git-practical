@@ -2,306 +2,92 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ahamed Dheethath S - Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-  <style>
-    * {margin:0;padding:0;box-sizing:border-box;}
-    body {
-      font-family:'Poppins',sans-serif;
-      background:#0f0f1a; color:#e2e8f0;
-      scroll-behavior:smooth;
-    }
-    a {color:#38bdf8;text-decoration:none;}
-    h1,h2,h3 {font-weight:700;}
-
-    /* Navbar */
-    nav {
-      position:fixed;top:0;left:0;right:0;
-      background:rgba(15,15,30,0.8);
-      backdrop-filter:blur(8px);
-      display:flex;justify-content:center;
-      padding:15px;z-index:1000;
-    }
-    nav a {margin:0 15px;color:#e2e8f0;transition:.3s;}
-    nav a:hover {color:#38bdf8;text-shadow:0 0 8px #38bdf8;}
-
-    /* Hero */
-    header {
-      height:100vh;display:flex;justify-content:center;align-items:center;text-align:center;
-      background:linear-gradient(135deg,#111827,#0f0f1a);
-      position:relative;
-    }
-    header::after {
-      content:"";
-      position:absolute;top:0;left:0;width:100%;height:100%;
-      background:radial-gradient(circle at 50% 50%, rgba(56,189,248,0.15), transparent 70%),
-                 radial-gradient(circle at 20% 80%, rgba(244,63,94,0.15), transparent 70%);
-      pointer-events:none;
-    }
-    .glass-card {
-      background:rgba(20,20,40,0.6);
-      padding:40px;border-radius:16px;
-      backdrop-filter:blur(10px);box-shadow:0 0 20px rgba(56,189,248,0.3);
-    }
-    header h1 {font-size:3rem;margin-bottom:15px;color:white;text-shadow:0 0 12px #38bdf8;}
-    header p {font-size:1.2rem;margin-bottom:20px;min-height:30px;color:#f0f9ff;}
-    .socials a {margin:0 10px;color:white;font-weight:500;}
-
-    /* Buttons */
-    .btn {display:inline-block;padding:12px 24px;border-radius:6px;margin:8px;font-weight:500;cursor:pointer;transition:.3s;}
-    .btn-primary {
-      background:#38bdf8;color:#0f0f1a;
-      box-shadow:0 0 10px #38bdf8,0 0 20px #38bdf8;
-    }
-    .btn-primary:hover {background:#0f0f1a;color:#38bdf8;box-shadow:0 0 25px #38bdf8;}
-    .btn-outline {
-      border:2px solid #f43f5e;color:#f43f5e;
-      box-shadow:0 0 10px #f43f5e;
-    }
-    .btn-outline:hover {background:#f43f5e;color:#0f0f1a;box-shadow:0 0 25px #f43f5e;}
-
-    /* Sections */
-    section {
-      max-width:900px;margin:auto;
-      padding:80px 20px;text-align:center;
-      opacity:0;transform:translateY(50px);transition:.8s;
-    }
-    section.show {opacity:1;transform:translateY(0);}
-    h2 {font-size:2rem;margin-bottom:20px;text-shadow:0 0 10px #38bdf8;}
-
-    /* Skills */
-    .skill-bar {margin:15px 0;text-align:left;}
-    .bar {background:#1e1e2e;border-radius:6px;overflow:hidden;}
-    .bar div {
-      height:12px;background:linear-gradient(90deg,#38bdf8,#f43f5e);
-      width:0;transition:width 1.5s;
-      box-shadow:0 0 10px #38bdf8,0 0 20px #f43f5e;
-    }
-
-    /* Projects */
-    .project-card {
-      position:relative;overflow:hidden;
-      border-radius:10px;margin:20px 0;
-      box-shadow:0 0 20px rgba(56,189,248,0.2);
-    }
-    .project-card img {width:100%;border-radius:10px;transition:transform .3s;}
-    .project-card:hover img {transform:scale(1.1);}
-    .overlay {
-      position:absolute;top:0;left:0;width:100%;height:100%;
-      background:rgba(0,0,0,0.7);color:white;
-      display:flex;flex-direction:column;justify-content:center;align-items:center;
-      opacity:0;transition:.3s;padding:20px;text-align:center;
-      text-shadow:0 0 12px #38bdf8;
-    }
-    .project-card:hover .overlay {opacity:1;}
-
-    /* Popup socials */
-    .social-buttons button {
-      padding:12px 20px;margin:10px;
-      background:#38bdf8;color:#0f0f1a;
-      border:none;border-radius:6px;cursor:pointer;font-weight:bold;
-      box-shadow:0 0 15px #38bdf8;
-    }
-    .social-buttons button:hover {box-shadow:0 0 25px #f43f5e;}
-    .popup {
-      display:none;position:fixed;top:0;left:0;width:100%;height:100%;
-      background:rgba(0,0,0,0.6);backdrop-filter:blur(6px);
-      justify-content:center;align-items:center;z-index:2000;
-    }
-    .popup-content {
-      background:rgba(15,15,30,0.95);
-      border:1px solid #38bdf8;
-      padding:30px;border-radius:12px;text-align:center;color:#fff;width:300px;
-      box-shadow:0 0 20px #38bdf8,0 0 30px #f43f5e;
-    }
-    .popup a {
-      display:inline-block;margin-top:15px;padding:10px 15px;
-      background:#38bdf8;color:#0f0f1a;border-radius:6px;font-weight:bold;
-      box-shadow:0 0 10px #38bdf8;
-    }
-    .close {position:absolute;top:15px;right:20px;cursor:pointer;font-size:24px;color:white;}
-
-    /* Form */
-    form {display:flex;flex-direction:column;max-width:600px;margin:auto;}
-    form input,form textarea {
-      margin-top:10px;padding:12px;border-radius:6px;
-      border:none;background:#1e1e2e;color:#f0f9ff;
-    }
-    form button {
-      margin-top:20px;padding:12px;border:none;border-radius:6px;
-      background:#f43f5e;color:#0f0f1a;font-weight:bold;cursor:pointer;
-      box-shadow:0 0 15px #f43f5e;
-    }
-    form button:hover {background:#38bdf8;box-shadow:0 0 20px #38bdf8;}
-
-    #project-list li {
-      background:#1e1e2e;padding:15px;margin:15px 0;
-      border-left:4px solid #38bdf8;border-radius:6px;
-    }
-
-    /* Footer */
-    footer {text-align:center;padding:20px;background:#1e1e2e;color:#94a3b8;}
-  </style>
+  <title>Ahamed Dheethath | Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- NAV -->
   <nav>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#socials">Socials</a>
-    <a href="#create-project">Create Project</a>
-    <a href="#contact">Contact</a>
+    <h2>Ahamed Dheethath</h2>
+    <ul>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
   </nav>
 
-  <!-- HERO -->
   <header>
-    <div class="glass-card">
-      <h1>Ahamed Dheethath S</h1>
-      <p id="typing"></p>
-      <div class="socials">
-        <a href="https://github.com/Ahamed-lab" target="_blank">GitHub</a> |
-        <a href="https://www.linkedin.com/in/ahamed-dheethath-48007a249/" target="_blank">LinkedIn</a> |
-        <a href="mailto:ahameddheethath567@gmail.com">Email</a>
-      </div>
-      <div>
-        <a href="resume.pdf" class="btn btn-primary" download>📄 Resume</a>
-        <a href="#projects" class="btn btn-outline">↓ See Projects</a>
-      </div>
-    </div>
+    <h1>Software Developer & Designer</h1>
+    <p>Crafting robust solutions with modern design & AI.</p>
   </header>
 
-  <!-- ABOUT -->
   <section id="about">
     <h2>About Me</h2>
-    <p>I am pursuing <strong>B.Tech in Computer Science (AI & ML)</strong> at Jain University. Skilled in Python, Java, JavaScript, HTML, CSS, SQL, and MongoDB, with design knowledge in Figma. Passionate about blending creativity and technology to build user-friendly solutions.</p>
+    <p>
+      Enthusiastic learner passionate about coding and design.<br>
+      Currently pursuing B.Tech (AI & ML) at Jain University.
+    </p>
   </section>
 
-  <!-- SKILLS -->
   <section id="skills">
     <h2>Skills</h2>
-    <div class="skill-bar"><span>Python</span><div class="bar"><div style="width:90%"></div></div></div>
-    <div class="skill-bar"><span>Java</span><div class="bar"><div style="width:80%"></div></div></div>
-    <div class="skill-bar"><span>JavaScript</span><div class="bar"><div style="width:75%"></div></div></div>
-    <div class="skill-bar"><span>HTML/CSS</span><div class="bar"><div style="width:85%"></div></div></div>
-    <div class="skill-bar"><span>MongoDB</span><div class="bar"><div style="width:70%"></div></div></div>
-    <div class="skill-bar"><span>Figma</span><div class="bar"><div style="width:65%"></div></div></div>
+    <div class="skills-grid">
+      <div>Python</div>
+      <div>Java</div>
+      <div>JavaScript</div>
+      <div>HTML</div>
+      <div>CSS</div>
+      <div>SQL</div>
+      <div>MongoDB</div>
+      <div>Figma</div>
+      <div>Ubuntu</div>
+    </div>
   </section>
 
-  <!-- PROJECTS -->
   <section id="projects">
     <h2>Projects</h2>
     <div class="project-card">
-      <img src="project1.jpg" alt="Project 1">
-      <div class="overlay">
-        <h3>AI-powered Vehicle Identification</h3>
-        <p>Optimized robotic control system improving performance by 12%.</p>
-      </div>
+      <h3>AI-powered Vehicle Identification</h3>
+      <ul>
+        <li>12% performance improvement in robotic control systems</li>
+        <li>15% reduction in system failures</li>
+      </ul>
     </div>
     <div class="project-card">
-      <img src="project2.jpg" alt="Project 2">
-      <div class="overlay">
-        <h3>Translation Software using NLP</h3>
-        <p>Built a multilingual text translation software using NLP techniques.</p>
-      </div>
+      <h3>Translation Software using NLP</h3>
+      <ul>
+        <li>Efficient, multi-language translation</li>
+      </ul>
     </div>
   </section>
 
-  <!-- SOCIAL POPUPS -->
-  <section id="socials">
-    <h2>Connect With Me</h2>
-    <div class="social-buttons">
-      <button onclick="openPopup('github')">GitHub</button>
-      <button onclick="openPopup('linkedin')">LinkedIn</button>
-    </div>
-  </section>
-  <div id="popup" class="popup">
-    <div class="popup-content">
-      <span class="close" onclick="closePopup()">&times;</span>
-      <h3 id="popup-title"></h3>
-      <p id="popup-info"></p>
-      <a id="popup-link" target="_blank">Go to Profile</a>
-    </div>
-  </div>
-
-  <!-- CREATE PROJECT -->
-  <section id="create-project">
-    <h2>Create a Project</h2>
-    <form id="project-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-      <input type="text" name="title" placeholder="Project Title" required>
-      <textarea name="description" rows="4" placeholder="Description" required></textarea>
-      <input type="text" name="tech" placeholder="Technologies Used">
-      <button type="submit">Submit Project</button>
-    </form>
-    <p id="thank-you" style="display:none;color:lightgreen;margin-top:10px;">✅ Thank you! Project submitted.</p>
-    <ul id="project-list"></ul>
+  <section id="education">
+    <h2>Education</h2>
+    <p>B.Tech (CS Engineering, AI & ML)<br>
+      Jain University, CGPA: 7.32, GPA: 8.00</p>
   </section>
 
-  <!-- CONTACT -->
+  <section id="certifications">
+    <h2>Certifications</h2>
+    <ul>
+      <li>Introduction to DevOps — IBM</li>
+      <li>Contemporary Operating Systems — Illinois Tech</li>
+      <li>Generative AI in Education — Univ. of Glasgow</li>
+    </ul>
+  </section>
+
   <section id="contact">
     <h2>Contact</h2>
-    <p>Email: <a href="mailto:ahameddheethath567@gmail.com">ahameddheethath567@gmail.com</a></p>
-    <p>Phone: <a href="tel:+917708033662">+91 7708033662</a></p>
-    <p>GitHub: <a href="https://github.com/Ahamed-lab" target="_blank">github.com/Ahamed-lab</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/ahamed-dheethath-48007a249/" target="_blank">linkedin.com/in/ahamed-dheethath</a></p>
+    <p>Email: ahameddheethath567@gmail.com</p>
+    <p>GitHub: <a href="https://github.com/Ahamed-lab" target="_blank">Ahamed-lab</a></p>
   </section>
 
   <footer>
-  <p>&copy; 2025 Ahamed Dheethath S | Designed & Developed by Ahamed Dheethath S</p>
-</footer>
+    <p>Languages: English | Tamil</p>
+    <p>Co-Curricular: Volleyball, Content Creation, Travelling</p>
+  </footer>
 
-
-  <script>
-    // Typing Effect
-    const roles = ["Web Developer","UX Enthusiast","AI & ML Student"];
-    let i=0,j=0,isDeleting=false;
-    function type(){
-      const typing=document.getElementById("typing");
-      const current=roles[i];
-      typing.textContent=current.substring(0,j);
-      if(!isDeleting && j++===current.length){isDeleting=true;setTimeout(type,1000);return;}
-      if(isDeleting && j--===0){isDeleting=false;i=(i+1)%roles.length;}
-      setTimeout(type,isDeleting?80:120);
-    } type();
-
-    // Scroll animations
-    const sections=document.querySelectorAll("section");
-    window.addEventListener("scroll",()=>{sections.forEach(sec=>{if(sec.getBoundingClientRect().top<window.innerHeight-100)sec.classList.add("show");});});
-
-    // Animate skill bars
-    const skillBars=document.querySelectorAll(".bar div");
-    window.addEventListener("scroll",()=>{skillBars.forEach(bar=>{if(bar.getBoundingClientRect().top<window.innerHeight-100){bar.style.width=bar.getAttribute("style").split(":")[1];}});});
-
-    // Create project form
-    const form=document.getElementById("project-form");
-    const thankYou=document.getElementById("thank-you");
-    const projectList=document.getElementById("project-list");
-    form.addEventListener("submit",async function(e){
-      e.preventDefault();
-      const formData=new FormData(form);
-      const title=formData.get("title"),desc=formData.get("description"),tech=formData.get("tech");
-      const response=await fetch(form.action,{method:form.method,body:formData,headers:{'Accept':'application/json'}});
-      if(response.ok){
-        form.reset();thankYou.style.display="block";
-        const li=document.createElement("li");
-        li.innerHTML=`<strong>${title}</strong><br><em>${tech}</em><p>${desc}</p>`;
-        projectList.appendChild(li);
-      }
-    });
-
-    // Popup socials
-    function openPopup(type){
-      const popup=document.getElementById("popup");
-      const title=document.getElementById("popup-title");
-      const info=document.getElementById("popup-info");
-      const link=document.getElementById("popup-link");
-      if(type==="github"){title.textContent="GitHub Profile";info.textContent="Check out my repositories!";link.href="https://github.com/Ahamed-lab";link.textContent="Visit GitHub";}
-      if(type==="linkedin"){title.textContent="LinkedIn Profile";info.textContent="Connect with me professionally!";link.href="https://www.linkedin.com/in/ahamed-dheethath-48007a249/";link.textContent="Visit LinkedIn";}
-      popup.style.display="flex";
-    }
-    function closePopup(){document.getElementById("popup").style.display="none";}
-  </script>
 </body>
 </html>
