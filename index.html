@@ -1,38 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ahamed Dheethath | Portfolio</title>
-  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: linear-gradient(135deg, #eef2f3, #8ec5fc 80%);
+      color: #222;
+    }
+    header {
+      padding: 60px 20px 20px 20px;
+      text-align: center;
+      background: linear-gradient(90deg,#8ec5fc 5%,#e0c3fc 95%);
+      color: #222;
+    }
+    header h1 {
+      font-size: 2.8rem;
+      margin: 0 0 10px 0;
+    }
+    header p {
+      font-size: 1.2rem;
+      margin: 0 0 15px 0;
+    }
+    nav {
+      background: #232e35;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      padding: 10px 0;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li {
+      display: inline;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1.05rem;
+      transition: color 0.2s;
+    }
+    nav a:hover {
+      color: #8ec5fc;
+    }
+    section {
+      max-width: 800px;
+      margin: 35px auto;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 24px rgba(44,44,44,0.08);
+      padding: 32px 22px;
+    }
+    h2 {
+      color: #5733d4;
+      margin-top: 0;
+      margin-bottom: 18px;
+      font-size: 1.65rem;
+    }
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-bottom: 25px;
+    }
+    .skills-grid div {
+      background: #e0c3fc;
+      color: #222;
+      padding: 8px 16px;
+      border-radius: 16px;
+      font-weight: 500;
+      font-size: 1.1rem;
+      box-shadow: 0 2px 8px rgba(64,27,73,0.06);
+    }
+    .project-card {
+      background: #f7fafe;
+      border-radius: 10px;
+      padding: 14px 18px;
+      margin-bottom: 15px;
+      box-shadow: 0 2px 8px rgba(64,27,73,0.10);
+    }
+    .project-card h3 {
+      margin: 0 0 8px 0;
+      color: #3472e0;
+    }
+    ul {
+      padding-left: 20px;
+      margin: 8px 0 0 0;
+    }
+    @media (max-width: 600px) {
+      section { padding: 15px 7px; }
+      .skills-grid {gap: 7px;}
+      .skills-grid div {font-size: 0.95rem;padding:6px 10px;}
+      header{padding:25px 8px;}
+      header h1 {font-size:1.7rem;}
+      h2{font-size:1.2rem;}
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #232e35;
+      color: #eee;
+      font-size: 1rem;
+      margin-top: 35px;
+    }
+    .contact-link a {color:#5733d4;font-weight:bold;}
+    .contact-link a:hover {text-decoration:underline;}
+  </style>
 </head>
 <body>
-
+  <header>
+    <h1>Ahamed Dheethath</h1>
+    <p>Software Developer & Designer</p>
+    <p>B.Tech CSE (AI & ML) Student at Jain University</p>
+  </header>
   <nav>
-    <h2>Ahamed Dheethath</h2>
     <ul>
-      <li><a href="#projects">Projects</a></li>
+      <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
       <li><a href="#education">Education</a></li>
       <li><a href="#certifications">Certifications</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
-
-  <header>
-    <h1>Software Developer & Designer</h1>
-    <p>Crafting robust solutions with modern design & AI.</p>
-  </header>
-
   <section id="about">
     <h2>About Me</h2>
     <p>
-      Enthusiastic learner passionate about coding and design.<br>
-      Currently pursuing B.Tech (AI & ML) at Jain University.
+      I am an enthusiastic learner interested in both software development and user experience design.<br>
+      I love bridging the gap between coding and design, creating solutions that are functional, modern, and user-friendly.
     </p>
+    <p><b>Languages:</b> English (Fluent), Tamil (Native)</p>
+    <p><b>Interests:</b> Volleyball, Content Creation, Travelling</p>
   </section>
-
   <section id="skills">
-    <h2>Skills</h2>
+    <h2>Technical Skills</h2>
     <div class="skills-grid">
       <div>Python</div>
       <div>Java</div>
@@ -45,49 +155,45 @@
       <div>Ubuntu</div>
     </div>
   </section>
-
   <section id="projects">
     <h2>Projects</h2>
     <div class="project-card">
       <h3>AI-powered Vehicle Identification</h3>
       <ul>
-        <li>12% performance improvement in robotic control systems</li>
-        <li>15% reduction in system failures</li>
+        <li>Designed & optimized a robotic control system, realizing a 12% performance improvement</li>
+        <li>Coordinated industry-standard validation/testing</li>
+        <li>Provided technical expertise, contributing to a 15% reduction in system failures</li>
       </ul>
     </div>
     <div class="project-card">
       <h3>Translation Software using NLP</h3>
       <ul>
-        <li>Efficient, multi-language translation</li>
+        <li>Built NLP-based software for efficient multi-language text translation</li>
       </ul>
     </div>
   </section>
-
   <section id="education">
     <h2>Education</h2>
-    <p>B.Tech (CS Engineering, AI & ML)<br>
-      Jain University, CGPA: 7.32, GPA: 8.00</p>
+    <p><strong>B.Tech in Computer Science Engineering (AI & ML)</strong></p>
+    <p>Jain University, Bangalore (Aug 2023 – Present)<br>CGPA: 7.32 &nbsp;&nbsp;|&nbsp;&nbsp;GPA: 8.00</p>
   </section>
-
   <section id="certifications">
     <h2>Certifications</h2>
     <ul>
       <li>Introduction to DevOps — IBM</li>
-      <li>Contemporary Operating Systems — Illinois Tech</li>
-      <li>Generative AI in Education — Univ. of Glasgow</li>
+      <li>Contemporary Operating Systems & Hardware 1b — Illinois Tech</li>
+      <li>Generative AI in Education — University of Glasgow</li>
     </ul>
   </section>
-
   <section id="contact">
     <h2>Contact</h2>
-    <p>Email: ahameddheethath567@gmail.com</p>
-    <p>GitHub: <a href="https://github.com/Ahamed-lab" target="_blank">Ahamed-lab</a></p>
+    <p class="contact-link">
+      Email: <a href="mailto:ahameddheethath567@gmail.com">ahameddheethath567@gmail.com</a><br>
+      GitHub: <a href="https://github.com/Ahamed-lab" target="_blank">Ahamed-lab</a>
+    </p>
   </section>
-
   <footer>
-    <p>Languages: English | Tamil</p>
-    <p>Co-Curricular: Volleyball, Content Creation, Travelling</p>
+    &copy; 2025 Ahamed Dheethath &mdash; Portfolio
   </footer>
-
 </body>
 </html>
