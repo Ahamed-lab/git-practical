@@ -4,116 +4,197 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ahamed Dheethath | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    /* Animated gradient background */
     body {
       margin: 0;
-      font-family: 'Segoe UI', Arial, sans-serif;
-      background: linear-gradient(135deg, #eef2f3, #8ec5fc 80%);
+      font-family: 'Montserrat', Arial, sans-serif;
+      min-height: 100vh;
+      background: linear-gradient(-45deg,#4e54c8,#8f94fb,#ffecd2,#fcb69f);
+      background-size: 400% 400%;
+      animation: gradientBG 14s ease infinite;
       color: #222;
     }
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
     header {
-      padding: 60px 20px 20px 20px;
+      padding: 70px 12px 22px 12px;
       text-align: center;
-      background: linear-gradient(90deg,#8ec5fc 5%,#e0c3fc 95%);
-      color: #222;
+      color: #fff;
+      letter-spacing: 0.02em;
+      text-shadow: 0 2px 16px rgba(78,84,200,0.29);
     }
     header h1 {
-      font-size: 2.8rem;
-      margin: 0 0 10px 0;
+      font-size: 3rem;
+      font-weight: 700;
+      margin: 0;
+      opacity: 0;
+      animation: headerFadeIn 1.5s forwards 0.3s;
     }
     header p {
       font-size: 1.2rem;
-      margin: 0 0 15px 0;
+      margin: 22px 0 0 0;
+      opacity: 0;
+      animation: headerFadeIn 1.5s forwards 0.6s;
     }
+    @keyframes headerFadeIn {
+      to { opacity: 1; }
+    }
+
     nav {
-      background: #232e35;
+      background: rgba(44,45,58,0.95);
       color: #fff;
       display: flex;
       justify-content: center;
-      padding: 10px 0;
+      padding: 10px;
+      font-size: 1.08rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 24px rgba(44,44,44,0.10);
     }
     nav ul {
-      list-style: none;
       display: flex;
-      gap: 30px;
-      margin: 0;
-      padding: 0;
-    }
-    nav ul li {
-      display: inline;
+      gap: 38px;
+      list-style: none;
+      margin: 0; padding: 0;
     }
     nav a {
       color: #fff;
       text-decoration: none;
-      font-weight: 500;
-      font-size: 1.05rem;
+      font-weight: bold;
+      letter-spacing: 0.01em;
       transition: color 0.2s;
     }
     nav a:hover {
-      color: #8ec5fc;
+      color: #ffecd2;
     }
+
     section {
-      max-width: 800px;
-      margin: 35px auto;
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 24px rgba(44,44,44,0.08);
-      padding: 32px 22px;
+      max-width: 870px;
+      margin: 40px auto;
+      background: rgba(255,255,255,0.93);
+      border-radius: 18px;
+      box-shadow: 0 6px 32px rgba(64,27,73,0.10);
+      padding: 34px 26px;
+      animation: fadeSec 1.2s;
     }
+    @keyframes fadeSec { from{opacity: 0;} to{opacity: 1;} }
+    section:not(:first-of-type) { margin-top: 50px; }
     h2 {
-      color: #5733d4;
-      margin-top: 0;
-      margin-bottom: 18px;
-      font-size: 1.65rem;
+      color: #4e54c8;
+      margin-top: 3px;
+      margin-bottom: 22px;
+      font-size: 1.98rem;
+      font-weight: 700;
     }
+
+    .download-resume {
+      background: linear-gradient(90deg,#4e54c8,#8f94fb);
+      color: #fff;
+      padding: 12px 30px;
+      border-radius: 36px;
+      font-weight: 700;
+      font-size: 1.08rem;
+      box-shadow: 0 6px 16px rgba(78,84,200,0.10);
+      border: none;
+      cursor:pointer;
+      text-decoration:none;
+      transition: background 0.18s, box-shadow 0.18s;
+      margin-bottom: 14px;
+      margin-right: 12px;
+      outline: none;
+      display: inline-block;
+      letter-spacing:0.02em;
+    }
+    .download-resume:hover {
+      background: linear-gradient(90deg,#8f94fb,#4e54c8);
+      box-shadow: 0 2px 16px rgba(78,84,200,0.18);
+    }
+
+    .icon-btn {
+      background: none;
+      border: none;
+      margin-right: 16px;
+      cursor: pointer;
+      width: 34px;
+      height: 34px;
+      padding: 0;
+      vertical-align: middle;
+      outline:none;
+    }
+    .icon-btn svg {
+      width: 32px; height: 32px;
+      vertical-align: middle;
+      transition: transform 0.18s;
+    }
+    .icon-btn:hover svg {
+      transform: scale(1.13);
+      filter: drop-shadow(0 2px 7px #fcb69f);
+    }
+
     .skills-grid {
       display: flex;
       flex-wrap: wrap;
-      gap: 15px;
-      margin-bottom: 25px;
+      gap: 18px;
+      margin-bottom: 28px;
     }
     .skills-grid div {
       background: #e0c3fc;
-      color: #222;
-      padding: 8px 16px;
-      border-radius: 16px;
+      padding: 10px 18px;
+      border-radius: 17px;
       font-weight: 500;
-      font-size: 1.1rem;
-      box-shadow: 0 2px 8px rgba(64,27,73,0.06);
+      font-size: 1.18rem;
+      box-shadow: 0 2px 12px rgba(64,27,73,0.06);
     }
     .project-card {
       background: #f7fafe;
-      border-radius: 10px;
-      padding: 14px 18px;
-      margin-bottom: 15px;
-      box-shadow: 0 2px 8px rgba(64,27,73,0.10);
+      border-radius: 11px;
+      padding: 15px 20px;
+      margin-bottom: 18px;
+      box-shadow: 0 2px 9px rgba(64,27,73,0.10);
+      animation: fadeSec 1.2s;
     }
-    .project-card h3 {
-      margin: 0 0 8px 0;
-      color: #3472e0;
+    .project-card h3 { color:#3472e0; margin-bottom:5px; }
+    .contact-details {
+      font-size:1.13rem;
     }
-    ul {
-      padding-left: 20px;
-      margin: 8px 0 0 0;
+    .contact-link a {
+      color: #5733d4;
+      font-weight: bold;
+      letter-spacing:0.01em;
+      text-decoration: none;
+    }
+    .contact-link a:hover {
+      text-decoration: underline;
+      color: #fcb69f;
     }
     @media (max-width: 600px) {
-      section { padding: 15px 7px; }
-      .skills-grid {gap: 7px;}
-      .skills-grid div {font-size: 0.95rem;padding:6px 10px;}
-      header{padding:25px 8px;}
-      header h1 {font-size:1.7rem;}
-      h2{font-size:1.2rem;}
+      section { padding: 16px 5px; }
+      .skills-grid {gap:7px;}
+      .skills-grid div {font-size:0.99rem; padding:7px 10px;}
+      header{padding:35px 4px;}
+      header h1 {font-size:2rem;}
+      h2{font-size:1.12rem;}
+      .download-resume{padding:8px 15px;}
+      nav ul{gap:18px;}
+      .contact-details{font-size:1rem;}
     }
     footer {
       text-align: center;
-      padding: 20px;
-      background: #232e35;
-      color: #eee;
-      font-size: 1rem;
-      margin-top: 35px;
+      padding: 23px;
+      color: #fff;
+      background: linear-gradient(90deg,#4e54c8,#8f94fb);
+      font-size: 1.12rem;
+      margin-top: 55px;
+      letter-spacing:0.03em;
     }
-    .contact-link a {color:#5733d4;font-weight:bold;}
-    .contact-link a:hover {text-decoration:underline;}
   </style>
 </head>
 <body>
@@ -134,12 +215,29 @@
   </nav>
   <section id="about">
     <h2>About Me</h2>
-    <p>
-      I am an enthusiastic learner interested in both software development and user experience design.<br>
-      I love bridging the gap between coding and design, creating solutions that are functional, modern, and user-friendly.
-    </p>
+    <p>I am an enthusiastic learner interested in both software development and user experience design.<br>
+      I love bridging the gap between coding and design, creating solutions that are functional, modern, and user-friendly.</p>
     <p><b>Languages:</b> English (Fluent), Tamil (Native)</p>
     <p><b>Interests:</b> Volleyball, Content Creation, Travelling</p>
+    <a class="download-resume" href="Ahamed-Dheethath-Resume.pdf" download>
+      Download Resume
+    </a>
+    <button class="icon-btn" onclick="window.open('https://www.linkedin.com/in/your-linkedin-url','_blank')"
+      title="LinkedIn">
+      <!-- LinkedIn SVG Logo -->
+      <svg xmlns="http://www.w3.org/2000/svg" fill="#0a66c2" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="12" fill="#fff"/>
+        <path d="M8.94 19h-3.13V9.94h3.13V19zm-1.56-10.14c-1 0-1.81-.81-1.81-1.81 0-1 .81-1.81 1.81-1.81s1.81.81 1.81 1.81c0 1-.81 1.81-1.81 1.81zm12.16 10.14h-3.13v-4.35c0-1.1-.02-2.51-1.53-2.51-1.53 0-1.77 1.2-1.77 2.44V19h-3.13V9.94h3V11h.04c.42-.8 1.44-1.64 2.97-1.64 3.18 0 3.77 2.09 3.77 4.81V19z"/>
+      </svg>
+    </button>
+    <button class="icon-btn" onclick="window.open('https://github.com/Ahamed-lab','_blank')" 
+      title="GitHub">
+      <!-- GitHub SVG Logo -->
+      <svg xmlns="http://www.w3.org/2000/svg" fill="#232e35" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="12" fill="#fff"/>
+        <path d="M12 .5a11.5 11.5 0 0 0-3.68 22.43c.58.1.79-.25.79-.56v-2.01c-3.34.73-4-1.6-4-1.6-.52-1.31-1.27-1.66-1.27-1.66-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.72-1.54-2.67-.3-5.47-1.34-5.47-5.97 0-1.32.47-2.39 1.23-3.24-.12-.3-.53-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.3 11.3 0 0 1 6.01 0c2.3-1.55 3.31-1.23 3.31-1.23.65 1.66.24 2.88.12 3.18.76.85 1.22 1.92 1.22 3.24 0 4.64-2.81 5.66-5.48 5.97.41.35.77 1.03.77 2.08v3.08c0 .31.21.66.8.55A11.51 11.51 0 0 0 12 .5z"/>
+      </svg>
+    </button>
   </section>
   <section id="skills">
     <h2>Technical Skills</h2>
@@ -187,10 +285,12 @@
   </section>
   <section id="contact">
     <h2>Contact</h2>
-    <p class="contact-link">
-      Email: <a href="mailto:ahameddheethath567@gmail.com">ahameddheethath567@gmail.com</a><br>
-      GitHub: <a href="https://github.com/Ahamed-lab" target="_blank">Ahamed-lab</a>
-    </p>
+    <div class="contact-details">
+    <strong>Email:</strong> <span class="contact-link"><a href="mailto:ahameddheethath567@gmail.com">ahameddheethath567@gmail.com</a></span><br>
+    <strong>Phone:</strong> <span class="contact-link"><a href="tel:7708033662">7708033662</a></span><br>
+    <strong>GitHub:</strong> <span class="contact-link"><a href="https://github.com/Ahamed-lab" target="_blank">Ahamed-lab</a></span><br>
+    <strong>LinkedIn:</strong> <span class="contact-link"><a href="https://www.linkedin.com/in/your-linkedin-url" target="_blank">LinkedIn Profile</a></span>
+    </div>
   </section>
   <footer>
     &copy; 2025 Ahamed Dheethath &mdash; Portfolio
